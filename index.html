@@ -46,14 +46,16 @@ body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg)
 <p class="nota" id="nota"></p>
 <div class="cont">
   <div class="ventana"><div class="top"><i></i><i></i><i></i><em id="url">refrismartsac.com</em></div><div class="scroll" id="sd"><img id="imd" alt="Escritorio"></div></div>
-  <div class="cel-col"><div class="cel"><div class="scroll" id="sm"><img id="imm" alt="Celular"></div></div><p>Celular (390 px)</p></div>
+  <div class="cel-col"><div class="cel"><div class="scroll" id="sm"><img id="imm" alt="Celular"></div></div><p>Celular (390 px)</p>
+    <div id="extra" style="display:none;margin-top:18px;text-align:center"><div class="cel"><img src="img/catalogo-ahora-m-filtros.webp" alt="Filtros abiertos en celular" style="display:block;width:100%"></div><p style="margin-top:8px">Al tocar «Filtrar y ordenar»: el panel entra desde la izquierda</p></div>
+  </div>
 </div>
 <script>
 const PANTALLAS = [
   ['inicio', 'Inicio', '/', 'Carrusel nuevo con los mismos productos, banners solo con productos, 3 pasos para cotizar y franja de confianza.'],
   ['menu', 'Menú', '/', 'Mismo fondo e íconos; ahora con cantidad de productos, subcategorías, rubros ilustrados y ayuda por WhatsApp.'],
-  ['catalogo', 'Catálogo', '/catalogo?categoria=herramientas', 'Banner de la categoría con subcategorías, 2 productos por fila en celular y ayuda ilustrada.'],
-  ['producto', 'Detalle', '/producto/pinza-amperimetrica-ac-dc-vcm-1-value', 'Características clave, botones ordenados, confianza con retratos, ayuda ilustrada y barra fija en celular.'],
+  ['catalogo', 'Catálogo', '/catalogo?categoria=herramientas', 'Cabecera discreta con subcategorías en chips, 2 productos por fila en celular y, en celular, un chip flotante «Filtrar y ordenar» que abre los filtros desde la izquierda.'],
+  ['producto', 'Detalle', '/producto/pinza-amperimetrica-ac-dc-vcm-1-value', 'Características clave, botones ordenados, confianza con retratos, ayuda ilustrada bajo la galería (sin huecos) y barra fija en celular.'],
   ['carrito', 'Carrito / cotizar', '/carrito', '3 pasos ilustrados, nota para el asesor, resumen con la asesora y productos que te pueden servir.'],
 ];
 let p = 'inicio', v = 'ahora';
@@ -69,6 +71,7 @@ function pintar() {
   document.getElementById('imm').src = `img/${p}-${v}-m.webp`;
   document.getElementById('url').textContent = 'refrismartsac.com' + (pant[2] === '/' ? '' : pant[2]) + (v === 'antes' ? '  ·  hoy' : '  ·  propuesta B');
   document.getElementById('nota').textContent = v === 'antes' ? 'Así se ve hoy la web.' : pant[3];
+  document.getElementById('extra').style.display = p === 'catalogo' && v === 'ahora' ? 'block' : 'none';
   document.getElementById('sd').scrollTop = 0; document.getElementById('sm').scrollTop = 0;
   history.replaceState(null, '', `?p=${p}&v=${v}`);
 }
