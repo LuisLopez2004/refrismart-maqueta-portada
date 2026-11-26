@@ -1,3 +1,3 @@
-# Maqueta portada RefriSmart
+# Maqueta RefriSmart · rediseño B
 
-Propuesta de rediseño de la portada de refrismartsac.com para revisión: versión actual, propuesta con personajes y propuesta solo con productos, en escritorio y celular.
+Propuesta de rediseño de refrismartsac.com para revisión: inicio, menú, catálogo, detalle de producto y carrito, antes y después, en escritorio y celular.

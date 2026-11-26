@@ -4,62 +4,76 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Maqueta portada RefriSmart · revisión</title>
+<title>Maqueta RefriSmart · rediseño B</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#eceef2;--surface:#fff;--line:#dcdfe5;--fg:#1e1c1c;--muted:#6b7280;--accent:#1866DB}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--surface:#161617;--line:#2a2a2d;--fg:#f4f4f5;--muted:#a1a1aa}}
-:root[data-theme="dark"]{--bg:#0b0b0c;--surface:#161617;--line:#2a2a2d;--fg:#f4f4f5;--muted:#a1a1aa}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
-.barra{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;padding:12px 24px;background:var(--surface);border-bottom:1px solid var(--line)}
+.barra{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between;padding:12px 24px;background:var(--surface);border-bottom:1px solid var(--line)}
 .barra strong{font-family:'Space Grotesk';font-size:16px}
 .barra small{display:block;font-size:12px;color:var(--muted)}
-.seg{display:inline-flex;gap:2px;padding:3px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
-.seg button{border:0;background:none;cursor:pointer;font-family:inherit;padding:7px 14px;border-radius:9px;font-size:13px;font-weight:500;color:var(--muted)}
+.der{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;gap:2px;padding:3px;border-radius:12px;background:var(--bg);border:1px solid var(--line);overflow-x:auto;max-width:100%}
+.seg button{border:0;background:none;cursor:pointer;font-family:inherit;padding:7px 13px;border-radius:9px;font-size:13px;font-weight:500;color:var(--muted);white-space:nowrap}
 .seg button.on{background:var(--accent);color:#fff}
-.der{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.der a{font-size:13px;color:var(--accent);font-weight:600;text-decoration:none}
-.cont{max-width:1640px;margin:0 auto;padding:20px 24px 50px;display:grid;gap:24px;align-items:start}
+.nota{max-width:1640px;margin:14px auto 0;padding:0 24px;font-size:13px;color:var(--muted)}
+.cont{max-width:1640px;margin:0 auto;padding:14px 24px 50px;display:grid;gap:24px;align-items:start}
 @media (min-width:1300px){.cont{grid-template-columns:minmax(0,1fr) 410px}}
 .ventana{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 24px 60px -24px rgba(0,0,0,.35)}
 .ventana .top{height:32px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#f3f4f6;border-bottom:1px solid #e5e7eb;font-size:11px;color:#9ca3af}
 .ventana .top i{width:10px;height:10px;border-radius:50%;background:#d1d5db;display:block}
 .ventana .top em{font-style:normal;margin-left:10px}
-.scroll{height:calc(100vh - 160px);min-height:520px;overflow-y:auto}
+.scroll{height:calc(100vh - 190px);min-height:520px;overflow-y:auto;background:#fff}
 .scroll img{display:block;width:100%}
 .cel-col{display:flex;flex-direction:column;align-items:center;gap:8px}
 .cel{width:410px;max-width:100%;border-radius:42px;border:10px solid #18181b;overflow:hidden;background:#fff;box-shadow:0 24px 60px -24px rgba(0,0,0,.45)}
-.cel .scroll{height:calc(100vh - 190px);min-height:520px}
+.cel .scroll{height:calc(100vh - 220px)}
 .cel-col p{font-size:12px;color:var(--muted)}
-@media (max-width:640px){.barra{padding:10px 16px}.cont{padding:16px}}
+@media (max-width:640px){.barra{padding:10px 14px}.cont,.nota{padding-left:14px;padding-right:14px}}
 </style>
 </head>
 <body>
 <div class="barra">
-  <div><strong>Portada · e-commerce RefriSmart</strong><small>Propuesta de rediseño · 3 versiones para comparar · escritorio y celular</small></div>
+  <div><strong>RefriSmart · rediseño B</strong><small>Maqueta completa para revisión · escritorio y celular</small></div>
   <div class="der">
-    <div class="seg" id="seg"><button data-v="antes">Antes</button><button data-v="personajes">Con personajes</button><button data-v="productos">Propuesta B · solo productos</button></div>
+    <div class="seg" id="segP"></div>
+    <div class="seg" id="segV"><button data-v="antes">Antes</button><button data-v="ahora">Propuesta B</button></div>
   </div>
 </div>
+<p class="nota" id="nota"></p>
 <div class="cont">
-  <div class="ventana"><div class="top"><i></i><i></i><i></i><em id="url">refrismartsac.com</em></div><div class="scroll" id="sd"><img id="imd" alt="Portada en escritorio"></div></div>
-  <div class="cel-col"><div class="cel"><div class="scroll" id="sm"><img id="imm" alt="Portada en celular"></div></div><p>Celular (390 px)</p></div>
+  <div class="ventana"><div class="top"><i></i><i></i><i></i><em id="url">refrismartsac.com</em></div><div class="scroll" id="sd"><img id="imd" alt="Escritorio"></div></div>
+  <div class="cel-col"><div class="cel"><div class="scroll" id="sm"><img id="imm" alt="Celular"></div></div><p>Celular (390 px)</p></div>
 </div>
 <script>
-const VALIDAS = ['antes', 'personajes', 'productos'];
-let v = 'productos';
-try { const g = localStorage.getItem('rs-avance-inicio3'); if (VALIDAS.includes(g)) v = g; } catch (e) {}
+const PANTALLAS = [
+  ['inicio', 'Inicio', '/', 'Carrusel nuevo con los mismos productos, banners solo con productos, 3 pasos para cotizar y franja de confianza.'],
+  ['menu', 'Menú', '/', 'Mismo fondo e íconos; ahora con cantidad de productos, subcategorías, rubros ilustrados y ayuda por WhatsApp.'],
+  ['catalogo', 'Catálogo', '/catalogo?categoria=herramientas', 'Banner de la categoría con subcategorías, 2 productos por fila en celular y ayuda ilustrada.'],
+  ['producto', 'Detalle', '/producto/pinza-amperimetrica-ac-dc-vcm-1-value', 'Características clave, botones ordenados, confianza con retratos, ayuda ilustrada y barra fija en celular.'],
+  ['carrito', 'Carrito / cotizar', '/carrito', '3 pasos ilustrados, nota para el asesor, resumen con la asesora y productos que te pueden servir.'],
+];
+let p = 'inicio', v = 'ahora';
+const q = new URLSearchParams(location.search);
+if (PANTALLAS.some(x => x[0] === q.get('p'))) p = q.get('p');
+if (['antes', 'ahora'].includes(q.get('v'))) v = q.get('v');
+document.getElementById('segP').innerHTML = PANTALLAS.map(([id, l]) => `<button data-p="${id}">${l}</button>`).join('');
 function pintar() {
-  document.querySelectorAll('#seg button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
-  document.getElementById('imd').src = `inicio-${v}-d.webp`;
-  document.getElementById('imm').src = `inicio-${v}-m.webp`;
-  document.getElementById('url').textContent = v === 'antes' ? 'refrismartsac.com · hoy' : v === 'personajes' ? 'refrismartsac.com · propuesta con personajes' : 'refrismartsac.com · propuesta solo con productos';
+  const pant = PANTALLAS.find(x => x[0] === p);
+  document.querySelectorAll('#segP button').forEach(b => b.classList.toggle('on', b.dataset.p === p));
+  document.querySelectorAll('#segV button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  document.getElementById('imd').src = `img/${p}-${v}-d.webp`;
+  document.getElementById('imm').src = `img/${p}-${v}-m.webp`;
+  document.getElementById('url').textContent = 'refrismartsac.com' + (pant[2] === '/' ? '' : pant[2]) + (v === 'antes' ? '  ·  hoy' : '  ·  propuesta B');
+  document.getElementById('nota').textContent = v === 'antes' ? 'Así se ve hoy la web.' : pant[3];
   document.getElementById('sd').scrollTop = 0; document.getElementById('sm').scrollTop = 0;
+  history.replaceState(null, '', `?p=${p}&v=${v}`);
 }
-document.getElementById('seg').onclick = e => { const b = e.target.closest('button'); if (!b) return; v = b.dataset.v; try { localStorage.setItem('rs-avance-inicio3', v); } catch (x) {} pintar(); };
+document.getElementById('segP').onclick = e => { const b = e.target.closest('button'); if (b) { p = b.dataset.p; pintar(); } };
+document.getElementById('segV').onclick = e => { const b = e.target.closest('button'); if (b) { v = b.dataset.v; pintar(); } };
 pintar();
 </script>
 </body>
